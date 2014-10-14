@@ -6,10 +6,15 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "repository": "",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/pepi09/HackBulgaria-NodeJS/tree/master/week1/1-hackernews-scraper"
+  },
   "author": "PepaS",
   "license": "MIT",
   "dependencies": {
-    "express": "~4.9.7"
+    "node-persist": "0.0.2",
+    "express": "~4.9.7",
+    "body-parser": "~1.5.2"
   }
 }
