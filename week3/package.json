@@ -1,0 +1,17 @@
+{
+  "name": "DirectedGraph",
+  "version": "0.0.0",
+  "description": "task from week3 in nodejs course @ hack bulgaria",
+  "main": "graph.js",
+  "scripts": {
+    "test": "mocha test-graph.js"
+  },
+  "author": "PepaS",
+  "license": "MIT",
+  "devDependencies": {
+    "chai": "^1.9.2"
+  },
+  "dependencies": {
+
+  }
+}
