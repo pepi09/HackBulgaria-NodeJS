@@ -1,0 +1,14 @@
+{
+  "name": "2-Image-Filters-library",
+  "version": "0.0.0",
+  "description": "Applying filters to image using kernel",
+  "main": "convolution.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "PepaS",
+  "license": "MIT",
+  "dependencies": {
+    "q": "~1.1.1"
+  }
+}
