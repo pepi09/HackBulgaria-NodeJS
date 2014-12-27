@@ -1,0 +1,15 @@
+{
+  "name": "3-A-Big-File",
+  "version": "0.0.0",
+  "description": "",
+  "main": "make-file.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "PepaS",
+  "license": "BSD-2-Clause",
+  "dependencies": {
+    "event-stream": "~3.1.7",
+    "bigint": "~0.4.2"
+  }
+}
