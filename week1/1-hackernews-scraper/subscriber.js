@@ -3,15 +3,21 @@
 var express = require('express'),
     storage = require('node-persist'),
     bodyParser = require('body-parser'),
-    app = express();
+    rand = require('generate-key'),
+    app = express(),
+    data;
 
 storage.init();
 app.use(bodyParser.json());
 
-app.post('/subscribe', function(req, res){
-  var subscriberId = req.body.email + Math.random().toString();
+data = storage.getItem("subscribers.json") || {}
 
-  storage.setItem(subscriberId,req.body);
+app.post('/subscribe', function(req, res){
+  var subscriberId = rand.generateKey(20);
+
+  data[subscriberId] = req.body;
+
+  storage.setItem("subscribers.json",data);
 
   res.json({
     "email" : req.body.email,
@@ -25,12 +31,7 @@ app.post('/unsubscribe', function(req, res){
 })
 
 app.get('/listSubscribers', function(req, res){
-  var all_subscribers = [];
-  storage.values(function(vals){
-    all_subscribers = vals;
-  });
-
-  res.json(all_subscribers);
+  res.json(data);
 })
 
 console.log("App is listening at http://localhost:8090");
