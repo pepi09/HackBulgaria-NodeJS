@@ -1,6 +1,7 @@
-var Q = require('q');
+"use strict";
+var Q = require("q");
 
-function Monochrome = {
+function Monochrome(){
 
 }
 
@@ -11,7 +12,7 @@ Monochrome.prototype.applyKernel = function(image, kernel){
   calculateImage(image, kernel, [0,0], result, deferred);
 
   return deferred.promise;
-}
+};
 
 Monochrome.prototype.edgeDetection = function(image){
   var edgeDetection = [
@@ -21,7 +22,7 @@ Monochrome.prototype.edgeDetection = function(image){
     ];
 
   return this.applyKernel(image, edgeDetection);
-}
+};
 
 Monochrome.prototype.boxBlur = function(image){
   var boxBlur = [
@@ -31,7 +32,7 @@ Monochrome.prototype.boxBlur = function(image){
     ];
 
   return this.applyKernel(image, boxBlur);
-}
+};
 
 function calculatePixel(image, kernel, position){
   var sum = 0,
@@ -50,8 +51,8 @@ function calculatePixel(image, kernel, position){
   }
 
   sum += pixelValue * value;
-    })
-  })
+    });
+  });
   return sum;
 }
 
@@ -74,7 +75,7 @@ function calculateImage(image, kernel, lastPosition, result, deferred){
       result[nextPosition[0]][nextPosition[1]] = calculatePixel(image, kernel, nextPosition);
 
       calculateImage(image, kernel, nextPosition, result, deferred);
-    })
+    });
   }
 }
 
