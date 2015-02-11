@@ -1,6 +1,6 @@
 "use strict"
 var Q = require("q"),
-    Monochrome = require("./monochrome").Monochrome
+    Monochrome = require("./monochrome");
 
 function RGB(){
 
@@ -42,3 +42,5 @@ function calculateRGB(bind, method, image, kernel, deffered){
     });
   });
 }
+
+module.exports = RGB;
