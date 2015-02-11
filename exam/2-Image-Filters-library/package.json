@@ -9,6 +9,7 @@
   "author": "PepaS",
   "license": "MIT",
   "dependencies": {
-    "q": "~1.1.1"
+    "q": "~1.1.1",
+    "chai": "~1.10.0"
   }
 }
